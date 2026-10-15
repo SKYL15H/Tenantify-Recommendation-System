@@ -1,0 +1,48 @@
+# Environment variables & secrets (JANGAN di-push ke git)
+.env
+.env.local
+.env.*.local
+
+# Python bytecode & cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook checkpoints & autosave
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Model weights, embeddings cache, & large binaries
+*.bin
+*.safetensors
+*.onnx
+*.h5
+*.pkl
+*.pt
+*.pth
+models/
+cache/
+.cache/
+
+# Archives & export files
+*.zip
+*.tar.gz
+*.rar
+
+# IDE & Editor settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
