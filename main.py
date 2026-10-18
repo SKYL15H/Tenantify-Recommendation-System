@@ -16,7 +16,7 @@ import numpy as np
 import faiss
 from sentence_transformers import SentenceTransformer
 import uvicorn
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import RedirectResponse
 from pydantic import BaseModel, Field
@@ -25,7 +25,9 @@ warnings.filterwarnings("ignore")
 
 # ── Konfigurasi Global ──────────────────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
-DATASET_PATH = BASE_DIR / "data" / "products.json"
+PRODUCTS_DATASET_PATH = BASE_DIR / "data" / "products.json"
+ORDERS_DATASET_PATH = BASE_DIR / "data" / "orders.json"
+DATASET_PATH = PRODUCTS_DATASET_PATH  # Backward compatibility alias
 MODEL_NAME = "BAAI/bge-m3"
 TOP_N_DEFAULT = 5
 
@@ -97,6 +99,33 @@ class Product:
         )
 
 
+@dataclass
+class OrderItem:
+    """Representasi satu item dalam pesanan pelanggan."""
+    productName: str
+    tenantName: str
+    price: int
+    quantity: int
+    notes: str = ""
+
+
+@dataclass
+class Order:
+    """Representasi pesanan pelanggan fullstack."""
+    id: str
+    pickupCode: str
+    orderType: str
+    tableNumber: Optional[str]
+    tenantNames: List[str]
+    items: List[OrderItem]
+    subtotal: int
+    platformFee: int
+    total: int
+    status: str
+    paymentMethod: str
+    createdAt: str
+
+
 def load_dataset(path: Path) -> List[Product]:
     """Membaca data/products.json dan mengkonversi ke list of Product."""
     if not path.exists():
@@ -107,6 +136,23 @@ def load_dataset(path: Path) -> List[Product]:
     with open(path, "r", encoding="utf-8") as f:
         raw = json.load(f)
     return [Product(**item) for item in raw]
+
+
+def load_orders(path: Path) -> List[Order]:
+    """Membaca data/orders.json dan mengkonversi ke list of Order."""
+    if not path.exists():
+        raise FileNotFoundError(
+            f"Dataset pesanan tidak ditemukan di: {path}\n"
+            "Pastikan file data/orders.json ada di direktori proyek."
+        )
+    with open(path, "r", encoding="utf-8") as f:
+        raw = json.load(f)
+    orders = []
+    for item in raw:
+        items = [OrderItem(**it) for it in item["items"]]
+        order_dict = {**item, "items": items}
+        orders.append(Order(**order_dict))
+    return orders
 
 
 # ── Embedder: Wrapper BAAI/bge-m3 + FAISS ──────────────────────
@@ -306,6 +352,21 @@ class OrderItemSchema(BaseModel):
     notes: str = Field("", description="Catatan pembeli")
 
 
+class OrderSchema(BaseModel):
+    id: str
+    pickupCode: str
+    orderType: str
+    tableNumber: Optional[str] = None
+    tenantNames: List[str]
+    items: List[OrderItemSchema]
+    subtotal: int
+    platformFee: int
+    total: int
+    status: str
+    paymentMethod: str
+    createdAt: str
+
+
 class RecommendationItem(BaseModel):
     product: ProductSchema
     hybrid_score: float = Field(description="Skor gabungan [0-1]")
@@ -343,6 +404,7 @@ class HealthResponse(BaseModel):
     model: str
     total_products: int
     total_tenants: int
+    total_orders: int
 
 
 def product_to_schema(p: Product) -> ProductSchema:
@@ -362,8 +424,34 @@ def product_to_schema(p: Product) -> ProductSchema:
     )
 
 
+def order_to_schema(o: Order) -> OrderSchema:
+    return OrderSchema(
+        id=o.id,
+        pickupCode=o.pickupCode,
+        orderType=o.orderType,
+        tableNumber=o.tableNumber,
+        tenantNames=o.tenantNames,
+        items=[
+            OrderItemSchema(
+                productName=it.productName,
+                tenantName=it.tenantName,
+                price=it.price,
+                quantity=it.quantity,
+                notes=it.notes or ""
+            ) for it in o.items
+        ],
+        subtotal=o.subtotal,
+        platformFee=o.platformFee,
+        total=o.total,
+        status=o.status,
+        paymentMethod=o.paymentMethod,
+        createdAt=o.createdAt,
+    )
+
+
 # ── Inisialisasi Data & Engine ─────────────────────────────────
-products = load_dataset(DATASET_PATH)
+products = load_dataset(PRODUCTS_DATASET_PATH)
+orders = load_orders(ORDERS_DATASET_PATH)
 embedder = Embedder(model_name=MODEL_NAME)
 embedder.build_index(products)
 recommender = Recommender(product_list=products, embedder=embedder)
@@ -406,7 +494,35 @@ def health_check():
         model=MODEL_NAME,
         total_products=len(products),
         total_tenants=len(tenant_ids),
+        total_orders=len(orders),
     )
+
+
+@app.get("/orders", response_model=List[OrderSchema], tags=["Orders"])
+def list_orders(
+    status: Optional[str] = None,
+    order_type: Optional[str] = None,
+):
+    """
+    Ambil semua pesanan pelanggan. Bisa difilter berdasarkan:
+    - **status**: Siap Diambil | Sedang Diproses | Selesai
+    - **order_type**: Dine-in | Takeaway
+    """
+    filtered = orders
+    if status:
+        filtered = [o for o in filtered if o.status.lower() == status.lower()]
+    if order_type:
+        filtered = [o for o in filtered if order_type.lower() in o.orderType.lower()]
+    return [order_to_schema(o) for o in filtered]
+
+
+@app.get("/orders/{order_id}", response_model=OrderSchema, tags=["Orders"])
+def get_order(order_id: str):
+    """Ambil detail satu pesanan berdasarkan ID (contoh: `ORD-9201`)."""
+    for o in orders:
+        if o.id == order_id:
+            return order_to_schema(o)
+    raise HTTPException(status_code=404, detail=f"Pesanan '{order_id}' tidak ditemukan.")
 
 
 @app.get("/products", response_model=List[ProductSchema], tags=["Products"])
