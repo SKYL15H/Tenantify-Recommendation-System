@@ -617,6 +617,55 @@ def recommend_by_order(req: RecommendByOrderRequest):
     )
 
 
+@app.post("/recommend/by-order-id/{order_id}", response_model=RecommendByOrderResponse, tags=["Recommendation"])
+def recommend_by_order_id(order_id: str, top_n: int = Query(5, ge=1, le=20)):
+    """
+    Rekomendasi langsung berdasarkan ID pesanan yang tersimpan di sistem.
+    Cukup kirim order_id (contoh: `ORD-9201`).
+    """
+    order = next((o for o in orders if o.id == order_id), None)
+    if not order:
+        raise HTTPException(status_code=404, detail=f"Pesanan '{order_id}' tidak ditemukan.")
+
+    order_items = [
+        {
+            "productName": it.productName,
+            "tenantName": it.tenantName,
+            "price": it.price,
+            "quantity": it.quantity,
+            "notes": it.notes or "",
+        }
+        for it in order.items
+    ]
+
+    try:
+        results = recommender.recommend_from_order(
+            order_items=order_items,
+            top_n=top_n,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+
+    ordered_products = [
+        p for it in order.items
+        if (p := recommender.name_to_product.get(it.productName))
+    ]
+
+    return RecommendByOrderResponse(
+        ordered_products=[product_to_schema(p) for p in ordered_products],
+        recommendations=[
+            RecommendationItem(
+                product=product_to_schema(r.product),
+                hybrid_score=r.hybrid_score,
+                semantic_score=r.semantic_score,
+                complementary_score=r.complementary_score,
+                reason=r.reason,
+            ) for r in results
+        ],
+        total_returned=len(results),
+    )
+
+
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     print(f"\n Menjalankan Tenantify AI Server di port {port}...")
