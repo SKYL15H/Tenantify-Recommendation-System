@@ -1,0 +1,923 @@
+[
+  {
+    "id": "ORD-9201",
+    "pickupCode": "TNT-501",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 12",
+    "tenantNames": ["Kopi & Roti Nusantara", "Ayam Geprek Sambal Korek"],
+    "items": [
+      {
+        "productName": "Kopi Susu Gula Aren",
+        "tenantName": "Kopi & Roti Nusantara",
+        "price": 18000,
+        "quantity": 1,
+        "notes": "Gula aren sedikit"
+      },
+      {
+        "productName": "Paket Ayam Geprek Krispi + Nasi",
+        "tenantName": "Ayam Geprek Sambal Korek",
+        "price": 25000,
+        "quantity": 1,
+        "notes": "Level pedas sedang (level 2)"
+      }
+    ],
+    "subtotal": 43000,
+    "platformFee": 1000,
+    "total": 44000,
+    "status": "Siap Diambil",
+    "paymentMethod": "QRIS",
+    "createdAt": "8 menit lalu"
+  },
+  {
+    "id": "ORD-9202",
+    "pickupCode": "TNT-502",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Bakso & Mie Ayam Pak Slamet", "Minuman Segar Pak Budi"],
+    "items": [
+      {
+        "productName": "Bakso Urat Spesial",
+        "tenantName": "Bakso & Mie Ayam Pak Slamet",
+        "price": 20000,
+        "quantity": 2,
+        "notes": "Tambah sambal bawang"
+      },
+      {
+        "productName": "Es Jeruk Segar",
+        "tenantName": "Bakso & Mie Ayam Pak Slamet",
+        "price": 7000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Jus Alpukat Kental",
+        "tenantName": "Minuman Segar Pak Budi",
+        "price": 15000,
+        "quantity": 1,
+        "notes": "Gula sedikit"
+      }
+    ],
+    "subtotal": 62000,
+    "platformFee": 1000,
+    "total": 63000,
+    "status": "Selesai",
+    "paymentMethod": "Tunai",
+    "createdAt": "25 menit lalu"
+  },
+  {
+    "id": "ORD-9203",
+    "pickupCode": "TNT-503",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 5",
+    "tenantNames": ["Soto & Sate Madura Bang Ridwan", "Gorengan Premium Kak Dina", "Minuman Tradisional Bu Yanti"],
+    "items": [
+      {
+        "productName": "Sate Ayam Madura",
+        "tenantName": "Soto & Sate Madura Bang Ridwan",
+        "price": 22000,
+        "quantity": 2,
+        "notes": "Bumbu kacang pisah"
+      },
+      {
+        "productName": "Soto Ayam Lamongan",
+        "tenantName": "Soto & Sate Madura Bang Ridwan",
+        "price": 18000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Bakwan Sayur Crispy",
+        "tenantName": "Gorengan Premium Kak Dina",
+        "price": 3000,
+        "quantity": 5,
+        "notes": "Baru goreng"
+      },
+      {
+        "productName": "Wedang Jahe Merah",
+        "tenantName": "Minuman Tradisional Bu Yanti",
+        "price": 8000,
+        "quantity": 2,
+        "notes": "Extra jahe"
+      }
+    ],
+    "subtotal": 93000,
+    "platformFee": 1000,
+    "total": 94000,
+    "status": "Sedang Diproses",
+    "paymentMethod": "QRIS",
+    "createdAt": "3 menit lalu"
+  },
+  {
+    "id": "ORD-9204",
+    "pickupCode": "TNT-504",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Nasi Goreng & Martabak Pak Herman"],
+    "items": [
+      {
+        "productName": "Nasi Goreng Spesial",
+        "tenantName": "Nasi Goreng & Martabak Pak Herman",
+        "price": 20000,
+        "quantity": 3,
+        "notes": "2 pedas, 1 tidak pedas"
+      },
+      {
+        "productName": "Martabak Manis Coklat Keju",
+        "tenantName": "Nasi Goreng & Martabak Pak Herman",
+        "price": 32000,
+        "quantity": 1,
+        "notes": "Setengah loyang saja"
+      }
+    ],
+    "subtotal": 92000,
+    "platformFee": 1000,
+    "total": 93000,
+    "status": "Selesai",
+    "paymentMethod": "Transfer Bank",
+    "createdAt": "1 jam lalu"
+  },
+  {
+    "id": "ORD-9205",
+    "pickupCode": "TNT-505",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 3",
+    "tenantNames": ["Gorengan & Kue Ikan Kak Sari", "Kafe Kekinian Ara"],
+    "items": [
+      {
+        "productName": "Kue Ikan Isi Coklat",
+        "tenantName": "Gorengan & Kue Ikan Kak Sari",
+        "price": 5000,
+        "quantity": 3,
+        "notes": "Baru goreng ya"
+      },
+      {
+        "productName": "Cireng Isi Keju Mozarella",
+        "tenantName": "Gorengan & Kue Ikan Kak Sari",
+        "price": 10000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Matcha Latte Dingin",
+        "tenantName": "Kafe Kekinian Ara",
+        "price": 20000,
+        "quantity": 1,
+        "notes": "Less sugar"
+      }
+    ],
+    "subtotal": 55000,
+    "platformFee": 1000,
+    "total": 56000,
+    "status": "Siap Diambil",
+    "paymentMethod": "QRIS",
+    "createdAt": "12 menit lalu"
+  },
+  {
+    "id": "ORD-9206",
+    "pickupCode": "TNT-506",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 8",
+    "tenantNames": ["Pempek & Siomay Kak Ratih", "Minuman Segar Pak Budi"],
+    "items": [
+      {
+        "productName": "Pempek Kapal Selam",
+        "tenantName": "Pempek & Siomay Kak Ratih",
+        "price": 17000,
+        "quantity": 2,
+        "notes": "Cuka pedas extra"
+      },
+      {
+        "productName": "Siomay Ikan Kukus",
+        "tenantName": "Pempek & Siomay Kak Ratih",
+        "price": 14000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Es Campur Spesial",
+        "tenantName": "Minuman Segar Pak Budi",
+        "price": 12000,
+        "quantity": 2,
+        "notes": "Banyakin cincau"
+      }
+    ],
+    "subtotal": 72000,
+    "platformFee": 1000,
+    "total": 73000,
+    "status": "Selesai",
+    "paymentMethod": "QRIS",
+    "createdAt": "45 menit lalu"
+  },
+  {
+    "id": "ORD-9207",
+    "pickupCode": "TNT-507",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Nasi Uduk & Lontong Bang Anto", "Gorengan Premium Kak Dina"],
+    "items": [
+      {
+        "productName": "Nasi Uduk Betawi Komplit",
+        "tenantName": "Nasi Uduk & Lontong Bang Anto",
+        "price": 20000,
+        "quantity": 2,
+        "notes": "Sambal extra"
+      },
+      {
+        "productName": "Lontong Sayur Padang",
+        "tenantName": "Nasi Uduk & Lontong Bang Anto",
+        "price": 16000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Tempe Mendoan Hangat",
+        "tenantName": "Gorengan Premium Kak Dina",
+        "price": 4000,
+        "quantity": 3,
+        "notes": "Baru goreng"
+      }
+    ],
+    "subtotal": 68000,
+    "platformFee": 1000,
+    "total": 69000,
+    "status": "Selesai",
+    "paymentMethod": "Tunai",
+    "createdAt": "2 jam lalu"
+  },
+  {
+    "id": "ORD-9208",
+    "pickupCode": "TNT-508",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 1",
+    "tenantNames": ["Pecel Lele & Ayam Bakar Mas Udin", "Kelapa Muda & Jamu Pak Diman"],
+    "items": [
+      {
+        "productName": "Pecel Lele Lamongan",
+        "tenantName": "Pecel Lele & Ayam Bakar Mas Udin",
+        "price": 18000,
+        "quantity": 1,
+        "notes": "Sambal extra pedas"
+      },
+      {
+        "productName": "Ayam Bakar Madu",
+        "tenantName": "Pecel Lele & Ayam Bakar Mas Udin",
+        "price": 27000,
+        "quantity": 1,
+        "notes": "Paha atas"
+      },
+      {
+        "productName": "Air Kelapa Muda Segar",
+        "tenantName": "Kelapa Muda & Jamu Pak Diman",
+        "price": 14000,
+        "quantity": 2,
+        "notes": ""
+      }
+    ],
+    "subtotal": 73000,
+    "platformFee": 1000,
+    "total": 74000,
+    "status": "Sedang Diproses",
+    "paymentMethod": "QRIS",
+    "createdAt": "5 menit lalu"
+  },
+  {
+    "id": "ORD-9209",
+    "pickupCode": "TNT-509",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 15",
+    "tenantNames": ["Jajanan Pasar Bu Marni", "Dessert Station Kak Rini", "Minuman Tradisional Bu Yanti"],
+    "items": [
+      {
+        "productName": "Klepon Pandan Original",
+        "tenantName": "Jajanan Pasar Bu Marni",
+        "price": 8000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Onde-Onde Wijen",
+        "tenantName": "Jajanan Pasar Bu Marni",
+        "price": 6000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Puding Coklat Lava",
+        "tenantName": "Dessert Station Kak Rini",
+        "price": 12000,
+        "quantity": 1,
+        "notes": "Extra whipped cream"
+      },
+      {
+        "productName": "Es Dawet Ireng",
+        "tenantName": "Minuman Tradisional Bu Yanti",
+        "price": 8000,
+        "quantity": 2,
+        "notes": "Banyakin santan"
+      }
+    ],
+    "subtotal": 56000,
+    "platformFee": 1000,
+    "total": 57000,
+    "status": "Selesai",
+    "paymentMethod": "Tunai",
+    "createdAt": "1 jam lalu"
+  },
+  {
+    "id": "ORD-9210",
+    "pickupCode": "TNT-510",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Kafe Kekinian Ara", "Gelato & Sweet Bu Nana"],
+    "items": [
+      {
+        "productName": "Matcha Latte Dingin",
+        "tenantName": "Kafe Kekinian Ara",
+        "price": 20000,
+        "quantity": 1,
+        "notes": "Normal sugar"
+      },
+      {
+        "productName": "Croissant Mentega Premium",
+        "tenantName": "Kafe Kekinian Ara",
+        "price": 18000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Gelato Stroberi Segar",
+        "tenantName": "Gelato & Sweet Bu Nana",
+        "price": 22000,
+        "quantity": 1,
+        "notes": "Cup"
+      }
+    ],
+    "subtotal": 78000,
+    "platformFee": 1000,
+    "total": 79000,
+    "status": "Siap Diambil",
+    "paymentMethod": "QRIS",
+    "createdAt": "10 menit lalu"
+  },
+  {
+    "id": "ORD-9211",
+    "pickupCode": "TNT-511",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 7",
+    "tenantNames": ["Warung Sehat Mba Sinta", "Kelapa Muda & Jamu Pak Diman"],
+    "items": [
+      {
+        "productName": "Gado-Gado Spesial",
+        "tenantName": "Warung Sehat Mba Sinta",
+        "price": 17000,
+        "quantity": 1,
+        "notes": "Tanpa pare"
+      },
+      {
+        "productName": "Jus Wortel Jeruk Sehat",
+        "tenantName": "Warung Sehat Mba Sinta",
+        "price": 12000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Air Kelapa Muda Segar",
+        "tenantName": "Kelapa Muda & Jamu Pak Diman",
+        "price": 14000,
+        "quantity": 1,
+        "notes": ""
+      }
+    ],
+    "subtotal": 43000,
+    "platformFee": 1000,
+    "total": 44000,
+    "status": "Selesai",
+    "paymentMethod": "QRIS",
+    "createdAt": "35 menit lalu"
+  },
+  {
+    "id": "ORD-9212",
+    "pickupCode": "TNT-512",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 10",
+    "tenantNames": ["Ayam Geprek Sambal Korek", "Snack Corner Mba Lia", "Kopi & Roti Nusantara"],
+    "items": [
+      {
+        "productName": "Paket Ayam Geprek Krispi + Nasi",
+        "tenantName": "Ayam Geprek Sambal Korek",
+        "price": 25000,
+        "quantity": 2,
+        "notes": "Level 3 pedas"
+      },
+      {
+        "productName": "Tahu Tempe Goreng",
+        "tenantName": "Ayam Geprek Sambal Korek",
+        "price": 5000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Risoles Mayo Keju",
+        "tenantName": "Snack Corner Mba Lia",
+        "price": 7000,
+        "quantity": 3,
+        "notes": ""
+      },
+      {
+        "productName": "Es Kopi Americano",
+        "tenantName": "Kopi & Roti Nusantara",
+        "price": 14000,
+        "quantity": 2,
+        "notes": "Tanpa gula"
+      }
+    ],
+    "subtotal": 109000,
+    "platformFee": 1000,
+    "total": 110000,
+    "status": "Sedang Diproses",
+    "paymentMethod": "Transfer Bank",
+    "createdAt": "2 menit lalu"
+  },
+  {
+    "id": "ORD-9213",
+    "pickupCode": "TNT-513",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Dessert Station Kak Rini", "Kafe Kekinian Ara"],
+    "items": [
+      {
+        "productName": "Brownies Kukus Fudgy",
+        "tenantName": "Dessert Station Kak Rini",
+        "price": 13000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Bolu Pandan Kukus",
+        "tenantName": "Dessert Station Kak Rini",
+        "price": 10000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Kue Cubit Coklat Keju",
+        "tenantName": "Kafe Kekinian Ara",
+        "price": 8000,
+        "quantity": 2,
+        "notes": "Banyakin meses"
+      }
+    ],
+    "subtotal": 52000,
+    "platformFee": 1000,
+    "total": 53000,
+    "status": "Selesai",
+    "paymentMethod": "QRIS",
+    "createdAt": "3 jam lalu"
+  },
+  {
+    "id": "ORD-9214",
+    "pickupCode": "TNT-514",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 2",
+    "tenantNames": ["Bakso & Mie Ayam Pak Slamet", "Gorengan Premium Kak Dina", "Kelapa Muda & Jamu Pak Diman"],
+    "items": [
+      {
+        "productName": "Mie Ayam Jamur",
+        "tenantName": "Bakso & Mie Ayam Pak Slamet",
+        "price": 18000,
+        "quantity": 1,
+        "notes": "Mie kering"
+      },
+      {
+        "productName": "Bakso Urat Spesial",
+        "tenantName": "Bakso & Mie Ayam Pak Slamet",
+        "price": 20000,
+        "quantity": 1,
+        "notes": "Extra pangsit goreng"
+      },
+      {
+        "productName": "Telur Gulung Crispy",
+        "tenantName": "Gorengan Premium Kak Dina",
+        "price": 3000,
+        "quantity": 4,
+        "notes": ""
+      },
+      {
+        "productName": "Air Kelapa Muda Segar",
+        "tenantName": "Kelapa Muda & Jamu Pak Diman",
+        "price": 14000,
+        "quantity": 1,
+        "notes": ""
+      }
+    ],
+    "subtotal": 64000,
+    "platformFee": 1000,
+    "total": 65000,
+    "status": "Siap Diambil",
+    "paymentMethod": "Tunai",
+    "createdAt": "15 menit lalu"
+  },
+  {
+    "id": "ORD-9215",
+    "pickupCode": "TNT-515",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Nasi Goreng & Martabak Pak Herman", "Minuman Segar Pak Budi"],
+    "items": [
+      {
+        "productName": "Nasi Goreng Spesial",
+        "tenantName": "Nasi Goreng & Martabak Pak Herman",
+        "price": 20000,
+        "quantity": 1,
+        "notes": "Pedas, pakai cabe rawit"
+      },
+      {
+        "productName": "Jus Mangga Manalagi",
+        "tenantName": "Minuman Segar Pak Budi",
+        "price": 12000,
+        "quantity": 1,
+        "notes": ""
+      }
+    ],
+    "subtotal": 32000,
+    "platformFee": 1000,
+    "total": 33000,
+    "status": "Selesai",
+    "paymentMethod": "QRIS",
+    "createdAt": "50 menit lalu"
+  },
+  {
+    "id": "ORD-9216",
+    "pickupCode": "TNT-516",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 6",
+    "tenantNames": ["Soto & Sate Madura Bang Ridwan", "Jajanan Pasar Bu Marni", "Minuman Tradisional Bu Yanti"],
+    "items": [
+      {
+        "productName": "Sate Ayam Madura",
+        "tenantName": "Soto & Sate Madura Bang Ridwan",
+        "price": 22000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Kue Putu Bambu",
+        "tenantName": "Jajanan Pasar Bu Marni",
+        "price": 6000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Jamu Kunyit Asam",
+        "tenantName": "Minuman Tradisional Bu Yanti",
+        "price": 6000,
+        "quantity": 1,
+        "notes": ""
+      }
+    ],
+    "subtotal": 40000,
+    "platformFee": 1000,
+    "total": 41000,
+    "status": "Selesai",
+    "paymentMethod": "Tunai",
+    "createdAt": "2 jam lalu"
+  },
+  {
+    "id": "ORD-9217",
+    "pickupCode": "TNT-517",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 14",
+    "tenantNames": ["Pecel Lele & Ayam Bakar Mas Udin", "Gorengan & Kue Ikan Kak Sari", "Kopi & Roti Nusantara"],
+    "items": [
+      {
+        "productName": "Ayam Bakar Madu",
+        "tenantName": "Pecel Lele & Ayam Bakar Mas Udin",
+        "price": 27000,
+        "quantity": 1,
+        "notes": "Dada"
+      },
+      {
+        "productName": "Pisang Goreng Crispy Madu",
+        "tenantName": "Gorengan & Kue Ikan Kak Sari",
+        "price": 8000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Kopi Susu Gula Aren",
+        "tenantName": "Kopi & Roti Nusantara",
+        "price": 18000,
+        "quantity": 1,
+        "notes": "Gula aren normal"
+      }
+    ],
+    "subtotal": 61000,
+    "platformFee": 1000,
+    "total": 62000,
+    "status": "Sedang Diproses",
+    "paymentMethod": "QRIS",
+    "createdAt": "7 menit lalu"
+  },
+  {
+    "id": "ORD-9218",
+    "pickupCode": "TNT-518",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Snack Corner Mba Lia", "Pempek & Siomay Kak Ratih"],
+    "items": [
+      {
+        "productName": "Lumpia Semarang Goreng",
+        "tenantName": "Snack Corner Mba Lia",
+        "price": 8000,
+        "quantity": 3,
+        "notes": ""
+      },
+      {
+        "productName": "Pastel Isi Sayuran",
+        "tenantName": "Snack Corner Mba Lia",
+        "price": 5000,
+        "quantity": 4,
+        "notes": "Baru goreng"
+      },
+      {
+        "productName": "Pempek Kapal Selam",
+        "tenantName": "Pempek & Siomay Kak Ratih",
+        "price": 17000,
+        "quantity": 2,
+        "notes": "Cuka extra banyak"
+      }
+    ],
+    "subtotal": 78000,
+    "platformFee": 1000,
+    "total": 79000,
+    "status": "Selesai",
+    "paymentMethod": "Transfer Bank",
+    "createdAt": "1 jam lalu"
+  },
+  {
+    "id": "ORD-9219",
+    "pickupCode": "TNT-519",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 9",
+    "tenantNames": ["Nasi Uduk & Lontong Bang Anto", "Ayam Geprek Sambal Korek"],
+    "items": [
+      {
+        "productName": "Nasi Uduk Betawi Komplit",
+        "tenantName": "Nasi Uduk & Lontong Bang Anto",
+        "price": 20000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Es Teh Manis Jumbo",
+        "tenantName": "Ayam Geprek Sambal Korek",
+        "price": 5000,
+        "quantity": 1,
+        "notes": "Kurang manis"
+      }
+    ],
+    "subtotal": 25000,
+    "platformFee": 1000,
+    "total": 26000,
+    "status": "Selesai",
+    "paymentMethod": "Tunai",
+    "createdAt": "40 menit lalu"
+  },
+  {
+    "id": "ORD-9220",
+    "pickupCode": "TNT-520",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 4",
+    "tenantNames": ["Gelato & Sweet Bu Nana", "Dessert Station Kak Rini", "Kafe Kekinian Ara"],
+    "items": [
+      {
+        "productName": "Gelato Stroberi Segar",
+        "tenantName": "Gelato & Sweet Bu Nana",
+        "price": 22000,
+        "quantity": 1,
+        "notes": "Cone"
+      },
+      {
+        "productName": "Es Krim Coklat Belgia",
+        "tenantName": "Gelato & Sweet Bu Nana",
+        "price": 20000,
+        "quantity": 1,
+        "notes": "Cup, topping extra"
+      },
+      {
+        "productName": "Puding Coklat Lava",
+        "tenantName": "Dessert Station Kak Rini",
+        "price": 12000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Matcha Latte Dingin",
+        "tenantName": "Kafe Kekinian Ara",
+        "price": 20000,
+        "quantity": 2,
+        "notes": "Less ice"
+      }
+    ],
+    "subtotal": 94000,
+    "platformFee": 1000,
+    "total": 95000,
+    "status": "Siap Diambil",
+    "paymentMethod": "QRIS",
+    "createdAt": "6 menit lalu"
+  },
+  {
+    "id": "ORD-9221",
+    "pickupCode": "TNT-521",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Gorengan & Kue Ikan Kak Sari"],
+    "items": [
+      {
+        "productName": "Kue Ikan Isi Coklat",
+        "tenantName": "Gorengan & Kue Ikan Kak Sari",
+        "price": 5000,
+        "quantity": 6,
+        "notes": ""
+      },
+      {
+        "productName": "Cireng Isi Keju Mozarella",
+        "tenantName": "Gorengan & Kue Ikan Kak Sari",
+        "price": 10000,
+        "quantity": 3,
+        "notes": ""
+      },
+      {
+        "productName": "Pisang Goreng Crispy Madu",
+        "tenantName": "Gorengan & Kue Ikan Kak Sari",
+        "price": 8000,
+        "quantity": 2,
+        "notes": ""
+      }
+    ],
+    "subtotal": 76000,
+    "platformFee": 1000,
+    "total": 77000,
+    "status": "Selesai",
+    "paymentMethod": "QRIS",
+    "createdAt": "4 jam lalu"
+  },
+  {
+    "id": "ORD-9222",
+    "pickupCode": "TNT-522",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 11",
+    "tenantNames": ["Warung Sehat Mba Sinta", "Minuman Tradisional Bu Yanti", "Jajanan Pasar Bu Marni"],
+    "items": [
+      {
+        "productName": "Gado-Gado Spesial",
+        "tenantName": "Warung Sehat Mba Sinta",
+        "price": 17000,
+        "quantity": 2,
+        "notes": "Extra lontong"
+      },
+      {
+        "productName": "Wedang Jahe Merah",
+        "tenantName": "Minuman Tradisional Bu Yanti",
+        "price": 8000,
+        "quantity": 1,
+        "notes": "Tambah madu"
+      },
+      {
+        "productName": "Klepon Pandan Original",
+        "tenantName": "Jajanan Pasar Bu Marni",
+        "price": 8000,
+        "quantity": 1,
+        "notes": ""
+      }
+    ],
+    "subtotal": 50000,
+    "platformFee": 1000,
+    "total": 51000,
+    "status": "Selesai",
+    "paymentMethod": "Tunai",
+    "createdAt": "55 menit lalu"
+  },
+  {
+    "id": "ORD-9223",
+    "pickupCode": "TNT-523",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 13",
+    "tenantNames": ["Kopi & Roti Nusantara", "Dessert Station Kak Rini"],
+    "items": [
+      {
+        "productName": "Kopi Susu Gula Aren",
+        "tenantName": "Kopi & Roti Nusantara",
+        "price": 18000,
+        "quantity": 2,
+        "notes": ""
+      },
+      {
+        "productName": "Roti Bakar Nutella Keju",
+        "tenantName": "Kopi & Roti Nusantara",
+        "price": 15000,
+        "quantity": 1,
+        "notes": "Nutella banyak"
+      },
+      {
+        "productName": "Brownies Kukus Fudgy",
+        "tenantName": "Dessert Station Kak Rini",
+        "price": 13000,
+        "quantity": 1,
+        "notes": ""
+      }
+    ],
+    "subtotal": 64000,
+    "platformFee": 1000,
+    "total": 65000,
+    "status": "Sedang Diproses",
+    "paymentMethod": "QRIS",
+    "createdAt": "1 menit lalu"
+  },
+  {
+    "id": "ORD-9224",
+    "pickupCode": "TNT-524",
+    "orderType": "Takeaway (Bawa Pulang)",
+    "tableNumber": null,
+    "tenantNames": ["Soto & Sate Madura Bang Ridwan", "Nasi Uduk & Lontong Bang Anto", "Minuman Segar Pak Budi"],
+    "items": [
+      {
+        "productName": "Soto Ayam Lamongan",
+        "tenantName": "Soto & Sate Madura Bang Ridwan",
+        "price": 18000,
+        "quantity": 2,
+        "notes": "Extra koya"
+      },
+      {
+        "productName": "Sate Ayam Madura",
+        "tenantName": "Soto & Sate Madura Bang Ridwan",
+        "price": 22000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Lontong Sayur Padang",
+        "tenantName": "Nasi Uduk & Lontong Bang Anto",
+        "price": 16000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Jus Alpukat Kental",
+        "tenantName": "Minuman Segar Pak Budi",
+        "price": 15000,
+        "quantity": 2,
+        "notes": ""
+      }
+    ],
+    "subtotal": 104000,
+    "platformFee": 1000,
+    "total": 105000,
+    "status": "Siap Diambil",
+    "paymentMethod": "Transfer Bank",
+    "createdAt": "20 menit lalu"
+  },
+  {
+    "id": "ORD-9225",
+    "pickupCode": "TNT-525",
+    "orderType": "Dine-in (Makan di Tempat)",
+    "tableNumber": "Meja 16",
+    "tenantNames": ["Nasi Goreng & Martabak Pak Herman", "Gorengan Premium Kak Dina", "Kopi & Roti Nusantara"],
+    "items": [
+      {
+        "productName": "Nasi Goreng Spesial",
+        "tenantName": "Nasi Goreng & Martabak Pak Herman",
+        "price": 20000,
+        "quantity": 2,
+        "notes": "1 tanpa telur"
+      },
+      {
+        "productName": "Martabak Manis Coklat Keju",
+        "tenantName": "Nasi Goreng & Martabak Pak Herman",
+        "price": 32000,
+        "quantity": 1,
+        "notes": ""
+      },
+      {
+        "productName": "Bakwan Sayur Crispy",
+        "tenantName": "Gorengan Premium Kak Dina",
+        "price": 3000,
+        "quantity": 5,
+        "notes": ""
+      },
+      {
+        "productName": "Es Kopi Americano",
+        "tenantName": "Kopi & Roti Nusantara",
+        "price": 14000,
+        "quantity": 2,
+        "notes": ""
+      }
+    ],
+    "subtotal": 115000,
+    "platformFee": 1000,
+    "total": 116000,
+    "status": "Sedang Diproses",
+    "paymentMethod": "QRIS",
+    "createdAt": "4 menit lalu"
+  }
+]
