@@ -35,7 +35,8 @@ Mengecek status server dan model AI.
   "status": "ok",
   "model": "BAAI/bge-m3",
   "total_products": 48,
-  "total_tenants": 12
+  "total_tenants": 19,
+  "total_orders": 25
 }
 ```
 
@@ -165,6 +166,28 @@ Mengecek status server dan model AI.
 
 ---
 
+### 4. Rekomendasi Langsung dari ID Pesanan
+> **Gunakan pada:** Halaman status pesanan / detail order yang sudah tersimpan di database.
+
+* **Method:** `POST`
+* **URL:** `/recommend/by-order-id/{order_id}?top_n=5`
+* **Path Parameter:** `order_id` (contoh: `ORD-9201` atau `ORD-9205`)
+* **Query Parameter:** `top_n` (opsional, default: 5)
+* **Response `200 OK`:** Format sama persis dengan `/recommend/by-order` di atas.
+
+---
+
+### 5. Manajemen Data Pesanan (Orders)
+> **Gunakan pada:** Dashboard kasir, tenant view, atau tracking status pesanan.
+
+* **List Orders:** `GET /orders?status=Siap Diambil&order_type=Dine-in`
+  * Query parameters opsional:
+    * `status`: `Siap Diambil` | `Sedang Diproses` | `Selesai`
+    * `order_type`: `Dine-in` | `Takeaway`
+* **Detail Order:** `GET /orders/{order_id}` (contoh: `/orders/ORD-9201`)
+
+---
+
 ## 💻 Contoh Snippet Kode Frontend (Next.js / React)
 
 ### Menggunakan Native `fetch` (JavaScript / TypeScript)
@@ -186,7 +209,7 @@ export async function getRecommendationsByProduct(productId: string, topN = 5) {
   return res.json();
 }
 
-// 2. Rekomendasi by Active Order
+// 2. Rekomendasi by Active Order Items (Cart State)
 export async function getRecommendationsByOrder(orderItems: any[], topN = 5) {
   const res = await fetch(`${AI_BASE_URL}/recommend/by-order`, {
     method: "POST",
@@ -199,4 +222,14 @@ export async function getRecommendationsByOrder(orderItems: any[], topN = 5) {
   if (!res.ok) throw new Error("Gagal mengambil rekomendasi cart");
   return res.json();
 }
+
+// 3. Rekomendasi by Order ID yang sudah tersimpan
+export async function getRecommendationsByOrderId(orderId: string, topN = 5) {
+  const res = await fetch(`${AI_BASE_URL}/recommend/by-order-id/${orderId}?top_n=${topN}`, {
+    method: "POST",
+  });
+  if (!res.ok) throw new Error("Gagal mengambil rekomendasi order ID");
+  return res.json();
+}
 ```
+
